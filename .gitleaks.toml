@@ -1,0 +1,14 @@
+title = "DevSecOps security scanning defaults"
+
+[allowlist]
+  description = "Allow placeholders and examples that are intentionally non-secret"
+  regexes = [
+    "(?i)(placeholder|example|changeme|replace-me|sample-secret|demo-token)",
+    "(?i)(api[_-]?key\s*[:=]\s*\"?example|token\s*[:=]\s*\"?example)",
+    "(?i)(client[_-]?secret\s*[:=]\s*\"?demo)"
+  ]
+  paths = [
+    "docs/**",
+    "examples/**",
+    "README.md"
+  ]
